@@ -1,0 +1,34 @@
+const projects = [
+  { category: 'LLM · Knowledge Graph', title: 'Salary Management System', date: 'Nov 2024 - Present', text: 'Building a job-network knowledge graph with Neo4j and knowledge-graph embedding methods to surface meaningful relationships in salary data.', tags: ['Neo4j', 'KGE', 'LLM'] },
+  { category: 'Computer Vision', title: 'Underwater Image Enhancement', date: 'Nov 2024', text: 'Explored classical enhancement methods including white balance, histogram equalization, Retinex and dehazing, then investigated CNN-based approaches.', tags: ['OpenCV', 'CNN', 'Image Processing'], note: 'Third Prize · 2024 APMCM' },
+  { category: 'Computer Vision', title: 'Subsampled Sediment Concentration', date: 'Feb 2024 - Present', text: 'Applying PyTorch deep-learning models to image preprocessing tasks for sediment concentration analysis in the Yangtze Estuary.', tags: ['PyTorch', 'Deep Learning', 'CV'] },
+  { category: 'Applied AI', title: 'Automated Bridge Health Monitoring', date: 'Sep 2023 - Jan 2024', text: 'Used OpenCV to classify infrared images and deep learning to identify abnormal points, with Python path planning based on DFS.', tags: ['Python', 'OpenCV', 'Infrared'] },
+];
+
+const honors = [
+  ['Tongji University Freshman Scholarship', '2023'], ['Tongji University Outstanding Undergraduate Scholarship', '2024'], ['Social Activity Scholarship of Tongji University for Academic Year', '2023 - 2024'], ['Honorable Mention, 2025 MCM', '2025'], ['Third Prize, 2024 APMCM', '2024'],
+];
+
+export default function Home() {
+  return (
+    <main>
+      <nav className="nav" aria-label="Primary navigation">
+        <a className="wordmark" href="#top">JZ<span>.</span></a>
+        <div className="nav-links"><a href="#about">About</a><a href="#work">Work</a><a href="#honors">Honors</a><a href="#contact">Contact</a></div>
+        <a className="nav-resume" href="/Jialin-Zhang-CV.pdf" download>Download CV</a>
+      </nav>
+      <section className="hero" id="top">
+        <div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" />
+        <div className="hero-copy"><p className="eyebrow">Computer Science · Tongji University</p><h1>Jialin<br /><em>Zhang</em></h1><p className="lead">Undergraduate researcher exploring the practical edge of <strong>machine learning, computer vision and LLM systems.</strong></p><div className="hero-actions"><a className="button button-primary" href="#work">Explore my work <span>↓</span></a><a className="button button-quiet" href="mailto:zhangjialinfred@gmail.com">Get in touch <span>↗</span></a></div></div>
+        <div className="identity-card" aria-label="Jialin Zhang profile"><div className="monogram">JZ</div><p>Based in Shanghai, China</p><div className="identity-rule" /><span>2023 - Present</span><strong>Tongji University</strong><small>Computer Science</small></div>
+      </section>
+      <section className="section intro-section" id="about"><div className="section-label"><span>01</span> About</div><div className="about-content"><h2>I build an understanding of intelligent systems from data to deployment.</h2><div className="about-detail"><p>I am a Computer Science undergraduate at Tongji University. My work has ranged from image understanding and enhancement to LLM-powered knowledge graphs, with a particular interest in translating research ideas into useful systems.</p><div className="interest-list"><span>Machine Learning</span><span>Computer Vision</span><span>LLMs &amp; KGE</span><span>Applied AI</span></div></div></div></section>
+      <section className="section education-section"><div className="section-label"><span>02</span> Education</div><div className="education-card"><div><p className="card-kicker">Tongji University</p><h2>B.Eng. in Computer Science</h2><p className="education-meta">2023 - Present · GPA 4.40 / 5.00 <span>(89.02 / 100)</span></p></div><div className="coursework"><b>Selected coursework</b><p>Mathematical Analysis · Linear Algebra · C++ · Data Structures · Discrete Mathematics</p></div></div></section>
+      <section className="section work-section" id="work"><div className="section-label"><span>03</span> Selected work</div><div className="work-header"><h2>Research and projects</h2><p>Selected explorations across language, vision and applied AI.</p></div><div className="project-grid">{projects.map((project, index) => <article className={`project-card project-${index + 1}`} key={project.title}><div className="project-topline"><span>{project.category}</span><time>{project.date}</time></div><div className="project-number">0{index + 1}</div><h3>{project.title}</h3><p>{project.text}</p>{project.note && <strong className="project-note">{project.note}</strong>}<div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></article>)}</div></section>
+      <section className="section experience-section"><div className="section-label"><span>04</span> Learning</div><div className="timeline"><article><time>Sep - Nov 2024</time><div><h3>AI: Applications of Machine Learning and Deep Learning</h3><p>Intensive course taught by Björn Schuller (Imperial College), covering foundational principles in deep learning and machine learning. Grade: 86 / 100.</p></div></article><article><time>Jul - Aug 2024</time><div><h3>AI and ML Summer School · HKU</h3><p>Studied the creation and basic application of diffusion models under the guidance of Yi Ma.</p></div></article><article><time>Oct - Dec 2024</time><div><h3>Website Deployment Training</h3><p>Built and maintained a mental-health website locally using Django with MySQL / SQLite.</p></div></article></div></section>
+      <section className="section honors-section" id="honors"><div className="section-label"><span>05</span> Recognition</div><div><h2>Honors &amp; awards</h2><div className="honors-list">{honors.map(([title, year]) => <div className="honor" key={title}><span>{title}</span><time>{year}</time></div>)}</div></div></section>
+      <section className="section beyond-section"><div className="section-label"><span>06</span> Beyond work</div><div className="beyond-content"><p>Outside the lab, I serve as Head of the Chess Department at Tongji University Chess Club and have been recognized as an Outstanding Member of Guohao College.</p><span className="chess-mark">♞</span></div></section>
+      <footer id="contact"><div><p className="eyebrow">Let&apos;s connect</p><h2>Have an idea worth<br />exploring?</h2></div><div className="footer-links"><a href="mailto:zhangjialinfred@gmail.com">zhangjialinfred@gmail.com <span>↗</span></a><a href="https://github.com/zhangjialin53" target="_blank" rel="noreferrer">GitHub <span>↗</span></a><a href="/Jialin-Zhang-CV.pdf" download>Download CV <span>↓</span></a></div><p className="copyright">© {new Date().getFullYear()} Jialin Zhang · Built with care.</p></footer>
+    </main>
+  );
+}
