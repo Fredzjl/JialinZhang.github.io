@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 const navigation = [['about', 'About'], ['education', 'Education'], ['publications', 'Publications'], ['research', 'Research'], ['honors', 'Honors'], ['more', 'More']];
 
 const publications = [
-  { title: 'TabQueryBench: A Query-Centric Benchmark for Synthetic Tabular Data', authors: 'J. Zhang, F. Dong, Y. Zhou, V. Sekar, S. Liu.', venue: 'arXiv preprint', link: 'https://arxiv.org/abs/2607.03926' },
-  { title: 'Recruitment Information Aggregation System', authors: 'J. Zhang, Q. Du, Y. Tong, Y. Guan, Y. Zhu.', venue: 'Computer Software Copyright · No. 2025SR1723880' },
-  { title: 'SwipeNodes: Swipe Navigations of Long Message Interaction via Keypoint Summary', authors: 'Z. Jiang, M. Jian, J. Zhang, Y. Wang, Q. Wang.', venue: 'Under submission to CHI' },
+  { title: 'TabQueryBench: A Query-Centric Benchmark for Synthetic Tabular Data', authors: <><strong className="author-highlight">J. Zhang</strong>, F. Dong, Y. Zhou, V. Sekar, S. Liu.</>, venue: 'arXiv preprint', link: 'https://arxiv.org/abs/2607.03926' },
+  { title: 'Recruitment Information Aggregation System', authors: <><strong className="author-highlight">J. Zhang</strong>, Q. Du, Y. Tong, Y. Guan, Y. Zhu.</>, venue: 'Computer Software Copyright · No. 2025SR1723880' },
+  { title: 'SwipeNodes: Swipe Navigations of Long Message Interaction via Keypoint Summary', authors: <>Z. Jiang, M. Jian, <strong className="author-highlight">J. Zhang</strong>, Y. Wang, Q. Wang.</>, venue: 'Under submission to CHI' },
 ];
 
 const research = [
